@@ -1,0 +1,102 @@
+SELECTOR_MAP = {
+    'marketbio.pl': {
+        'start_url': 'https://marketbio.pl/category/eko-sklep-bio-ekologiczny?horizontal',
+        'container': 'div.product-tile',
+        'name': 'a.product_name::text',
+        'price': 'span.price::text',
+        'currency': 'span.price::text',
+        'link': 'a.product_name::attr(href)',
+        'image_url': 'div.image img::attr(src)',
+        'category': 'bio_food'
+    },
+    'naturalniezdrowe.pl': {
+        'start_url': 'https://naturalniezdrowe.pl/95-zywnosc-ekologiczna',
+        'container': 'article.product-miniature',
+        'name': 'div.product-title a span::text',
+        'price': 'span[itemprop="price"]::attr(content)',
+        'currency': 'span[itemprop="price"]::attr(content)',
+        'link': 'div.product-title a::attr(href)',
+        'image_url': 'div.product-image img::attr(src)',
+        'category': 'bio_food'
+    },
+    'bee.pl': {
+        'start_url': 'https://www.bee.pl/t/zywnosc-ekologiczna-bio',
+        'container': 'div.product-container',
+        'name': 'a.ecommerce-datalayer::attr(title)',
+        'price': 'span.p-our-price::text',
+        'currency': 'span.p-our-price::text',
+        'link': 'a.ecommerce-datalayer::attr(href)',
+        'image_url': 'img::attr(src)',
+        'category': 'bio_food'
+    },
+    'biosklep.com.pl': {
+        'start_url': 'https://biosklep.com.pl/zywnosc-ekologiczna',
+        'container': 'div.product',
+        'name': 'span.productname::text',
+        'price': 'div.price em::text',
+        'currency': 'div.price em::text',
+        'link': 'a.prodname::attr(href)',
+        'image_url': 'span.img-wrap img::attr(data-src)',
+        'category': 'bio_food'
+    },
+    'czystabawelna.pl': {
+        'start_url': 'https://czystabawelna.pl/kategoria-produktu/dla-niej/',
+        'container': 'div.product-small',
+        'name': '.name a::text',
+        'price': '.price ins bdi::text, .price > bdi::text, .price > .amount bdi::text',# Szuka najpierw w <ins> (promocja), potem w <bdi> bezpośrednio pod .price
+        'currency': '.woocommerce-Price-currencySymbol::text',
+        'link': '.name a::attr(href)',
+        'image_url': '.box-image img::attr(data-src)',
+        'category': 'clothing'
+    },
+    'czysteubrania.pl': {
+        'category': 'clothing',
+        'start_url': 'https://www.czysteubrania.pl/szukaj/?q=gots',
+        'container': 'div.productThumb.pl',
+        'name': 'div.nazov::text',
+        'price': 'div.cenaBezna::text',
+        'currency': 'span.mena::text',
+        'link': 'a::attr(href)',
+        'image_url': '.imgWrap img::attr(data-src)',
+    },
+    'ekodrogeria.pl': {
+        'start_url': 'https://ekodrogeria.pl/kosmetyki',
+        'container': 'li[data-statistics-position]',
+        'name': 'h2.product-name a::text',
+        'price': 'span.price::text',
+        'currency': 'span.price::text',
+        'link': 'h2.product-name a::attr(href)',
+        'image_url': 'div.product-image img.image-main::attr(src)',
+        'category': 'cosmetics',
+    },
+    'miodowamydlarnia.pl': {
+        'start_url': 'https://miodowamydlarnia.pl/kosmetyki',
+        'container': 'div.product',
+        'name': 'a.product__name::text',
+        'price': 'strong.price[class*="--main"]::text',
+        'currency': 'strong.price[class*="--main"]::text',
+        'link': 'a.product__name::attr(href)',
+        'image_url': 'picture img::attr(src)',
+        'category': 'cosmetics',
+    },
+    'marketbio.pl': {
+        'start_url': 'https://marketbio.pl/category/kosmetyki-naturalne-416',
+        'container': 'div.product-tile',
+        'name': 'a.product_name::text',
+        'price': 'span.price::text',
+        'currency': 'span.price::text',
+        'link': 'a.product_name::attr(href)',
+        'image_url': 'div.image img::attr(src)',
+        'category': 'cosmetics'
+    },
+    'alchemianatury.pl': {
+        'category': 'cosmetics',
+        'start_url': 'https://alchemianatury.pl/produkty/',
+        'container': 'div.product-grid-item',
+        'name': 'h3.product-title a::text',
+        'price': '.price bdi::text',
+        'currency': '.woocommerce-Price-currencySymbol::text',
+        'link': 'h3.product-title a::attr(href)',
+        'image_url': '.product-image-loop img::attr(src)',
+    },
+}
